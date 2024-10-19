@@ -15,7 +15,7 @@
     </div>
     @if(!$survey->acceptsGuestEntries() && auth()->guest())
         <div class="p-5">
-            Please login to join this survey.
+            {{ __('Please login to join this survey.') }}
         </div>
     @else
         @foreach($survey->sections as $section)
@@ -27,9 +27,7 @@
         @endforeach
 
         @if($eligible)
-            <div class="d-grid col-2 mx-auto mt-3 mb-3">
-                <button class="btn btn-primary">{{ __('Submit') }}</button>
-            </div>
+            <button class="btn btn-primary">{{ __('Submit') }}</button>
         @endif
     @endif
 </div>

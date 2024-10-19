@@ -9,7 +9,7 @@ use MattDaneshvar\Survey\Models\Survey;
 class SurveySeeder extends Seeder
 {
     /**
-     * Run the database seeds.
+     * Run the database seeders.
      */
     public function run(): void
     {
@@ -32,7 +32,7 @@ class SurveySeeder extends Seeder
         $two->questions()->create([
             'content' => 'Would you want a new cat?',
             'type' => 'radio',
-            'options' => ['Yes', 'Oui']
+            'options' => ['Yes', 'No']
         ]);
     }
 }

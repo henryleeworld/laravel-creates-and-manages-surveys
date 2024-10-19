@@ -8,25 +8,21 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(config('survey.database.tables.entries'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('survey_id');
-            $table->unsignedInteger('participant_id')->nullable();
+            $table->id();
+            $table->unsignedBigInteger('survey_id');
+            $table->unsignedBigInteger('participant_id')->nullable();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists(config('survey.database.tables.entries'));
     }

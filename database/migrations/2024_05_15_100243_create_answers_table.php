@@ -8,15 +8,13 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(config('survey.database.tables.answers'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('question_id');
-            $table->unsignedInteger('entry_id')->nullable();
+            $table->id();
+            $table->unsignedBigInteger('question_id');
+            $table->unsignedBigInteger('entry_id')->nullable();
             $table->string('value');
             $table->timestamps();
         });
@@ -24,10 +22,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists(config('survey.database.tables.answers'));
     }

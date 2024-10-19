@@ -8,15 +8,13 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create(config('survey.database.tables.questions'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('survey_id')->nullable();
-            $table->unsignedInteger('section_id')->nullable();
+            $table->id();
+            $table->unsignedBigInteger('survey_id')->nullable();
+            $table->unsignedBigInteger('section_id')->nullable();
             $table->string('content');
             $table->string('type')->default('text');
             $table->json('options')->nullable();
@@ -27,10 +25,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists(config('survey.database.tables.questions'));
     }
