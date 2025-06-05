@@ -1,4 +1,4 @@
-# Laravel 11 建立和管理調查
+# Laravel 12 建立和管理調查
 
 引入 matt-daneshvar 的 laravel-survey 套件來擴增建立和管理調查，如果您多花點時間設計優良的問題，您將更容易獲得能幫助您達成目標的可靠回覆，同時也會給受訪者快速又輕鬆的填寫體驗。
 
@@ -35,5 +35,5 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/MhT3M57.gif)
+![](https://i.imgur.com/5SfCGPO.gif)
 > 決定好題型之後，您還必須決定提問方式

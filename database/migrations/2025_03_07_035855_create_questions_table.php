@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create(config('survey.database.tables.questions'), function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('survey_id')->nullable();
-            $table->unsignedBigInteger('section_id')->nullable();
+            $table->foreignId('survey_id')->nullable();
+            $table->foreignId('section_id')->nullable();
             $table->string('content');
             $table->string('type')->default('text');
             $table->json('options')->nullable();

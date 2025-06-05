@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create(config('survey.database.tables.entries'), function (Blueprint $table) {
+        Schema::create(config('survey.database.tables.sections'), function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('survey_id');
-            $table->unsignedBigInteger('participant_id')->nullable();
+            $table->foreignId('survey_id')->nullable();
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists(config('survey.database.tables.entries'));
+        Schema::dropIfExists(config('survey.database.tables.sections'));
     }
 };
