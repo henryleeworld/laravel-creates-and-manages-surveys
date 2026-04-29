@@ -3,14 +3,14 @@
         <div class="custom-control custom-radio">
             <input type="radio"
                    name="{{ $question->key }}"
-                   id="{{ $question->key . '-' . Str::slug($option) }}"
+                   id="{{ $question->key . '-' . Str::slug($option, language: app()->getLocale()) }}"
                    value="{{ $option }}"
                    class="custom-control-input"
                     {{ ($value ?? old($question->key)) == $option ? 'checked' : '' }}
                     {{ ($disabled ?? false) ? 'disabled' : '' }}
             >
             <label class="custom-control-label"
-                   for="{{ $question->key . '-' . Str::slug($option) }}">{{ __($option) }}
+                   for="{{ $question->key . '-' . Str::slug($option, language: app()->getLocale()) }}">{{ __($option) }}
                 @if($includeResults ?? false)
                     <span class="text-success">
                         ({{ number_format((new \MattDaneshvar\Survey\Utilities\Summary($question))->similarAnswersRatio($option) * 100, 2) }}%)
